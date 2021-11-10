@@ -1,0 +1,61 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Encryption {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+
+        <!-- Hero -->
+        <div class="section-header pb-6 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 text-center">
+                        <h1 class="display-3 mb-4">Encryption</h1>
+                        <p class="lead mb-5"> Upload files in  <span class="fw-bold">.txt format</span> fo encryption. The files will be processed and kept in the history for future use and observations</p>
+                        <div class="alert bg-secondary" role="alert">
+                            <span class="fas fa-info-circle"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Hero -->
+<div style="margin: 30px">
+
+
+    <div class="container  col-9">
+    <form  action="{% url 'upload_files_en' %}" method="POST" enctype="multipart/form-data">
+
+ {{ form.as_p }}
+          {% csrf_token %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+
+
+</div>
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    {% include 'includes/scripts.html' %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
+
+
+
+
+
+
